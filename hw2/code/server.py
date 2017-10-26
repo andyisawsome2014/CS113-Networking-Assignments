@@ -20,6 +20,7 @@ while True:
 
         message = connectionSocket.recv(1024)
         filename = message.split()[1]
+        print(filename)
         f = open(filename[1:], "rb")
         outputdata = f.read()#Fill in start Fill in end
         print("output is" + str(outputdata))
@@ -38,7 +39,7 @@ while True:
 #         #Send response message for file not found
 #             #Fill in Start
          responseContent="<!doctype html><html><body><h1>404 Not Found<h1></body></html>"
-         response= "HTTP/1.1 404 Not Found\r\nContent-Length:"+str(len(responseContent))+"Content-Type: text/html\r\n\r\n"+responseContent
+         response= "HTTP/1.1 404 Not Found\r\nContent-Length:"+str(len(responseContent))+"\r\nContent-Type: text/html\r\n\r\n"+responseContent
          connectionSocket.send(response.encode())
 #             #Fill in end
 #         #Close client socket
