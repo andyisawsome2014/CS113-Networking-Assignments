@@ -20,13 +20,13 @@ while True:
 
         message = connectionSocket.recv(1024)
         filename = message.split()[1]
-        print(filename)
+        print(message)
         f = open(filename[1:], "rb")
         outputdata = f.read()#Fill in start Fill in end
         print("output is" + str(outputdata))
         #Send one HTTP header line into socket
             #Fill in start
-        httpheader = "HTTP/1.1 200 OK\r\nConnection: close\r\nData: Today\r\nContent-Length:"+str(len(outputdata))+"\r\nContent-Type: text/html\r\n\r\n"
+        httpheader = "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nData: Today\r\nContent-Length:"+str(len(outputdata))+"\r\nContent-Type: text/html\r\n\r\n"
         print(httpheader)
         connectionSocket.send(httpheader.encode())
             #Fill in end
