@@ -38,7 +38,7 @@ if recv1[:3] != '250':
 
 #MAIL FROM
 while True:
-	mail_addr = input("Email: ")
+	mail_addr = 'diantaoy@uci.edu'
 
 	mail_addr_command_version = '<' + mail_addr + '>'
 
@@ -61,7 +61,7 @@ while True:
 
 #RCPT TO
 while True:
-	mail_addr = input('Recipient Email: ')
+	mail_addr = 'diantaoy@uci.edu'
 
 	mail_addr_command_version = '<' + mail_addr + '>'
 
